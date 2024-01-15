@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314881866989",
+    "project_id": "performance-monitor-f2909",
+    "storage_bucket": "performance-monitor-f2909.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314881866989:android:087f0f161323a19b31a0e4",
+        "android_client_info": {
+          "package_name": "com.performancedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314881866989-9ulr26o5mds1v4uco0b3l6dav55akq42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhZoEJDzElbkQjGKLD59bMxFyXn9r9otM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314881866989-9ulr26o5mds1v4uco0b3l6dav55akq42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

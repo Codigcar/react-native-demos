@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import perf from '@react-native-firebase/perf';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -31,6 +32,14 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  // Start a trace
+  const trace = perf().newTrace('myTrace');
+  trace.start();
+
+  setTimeout(() => {
+    trace.stop();
+  }, 10000);
+
   return (
     <View style={styles.sectionContainer}>
       <Text
