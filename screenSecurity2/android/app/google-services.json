@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "887430194751",
+    "project_id": "fastlane-app-distribution",
+    "storage_bucket": "fastlane-app-distribution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887430194751:android:8b3e6b71ac811d26b07a8a",
+        "android_client_info": {
+          "package_name": "com.screensecurity2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZmnZuCWtF0sYh70p0NokmsP5vh4yd1Kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
