@@ -10,8 +10,25 @@
     "test": "jest"
   },
   "dependencies": {
+    "@aws-amplify/react-native": "^1.0.12",
+    "@aws-sdk/client-cloudwatch": "^3.490.0",
+    "@aws-sdk/client-cloudwatch-logs": "^3.490.0",
+    "@react-native-async-storage/async-storage": "^1.21.0",
+    "@react-native-community/netinfo": "^11.2.1",
+    "aws-amplify": "^6.0.12",
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-native": "0.73.2",
+    "react-native-get-random-values": "^1.10.0",
+    "react-native-url-polyfill": "^2.0.0"
+  },
+  "react-native": {
+    "fs": "./src/aws/lib/empty.js",
+    "./lib/node_loader.js": "./src/aws/lib/react-native-loader.js",
+    "./lib/browser_loader.js": "./src/aws/lib/react-native-loader.js",
+    "./lib/core.js": "./dist/aws-sdk-core-react-native.js",
+    "xml2js": "./dist/xml2js.js"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
