@@ -10,7 +10,7 @@ const SecurityScreen = () => (
 const showSecurityScreenFromAppState = (appState: any) =>
   ['background', 'inactive'].includes(appState);
 
-const withSecurityScreenIOS = (Wrapped: any) => {
+const withSecurityScreenMain = (Wrapped: any) => {
   return class WithSecurityScreen extends React.Component {
     state = {
       showSecurityScreen: showSecurityScreenFromAppState(AppState.currentState),
@@ -43,7 +43,4 @@ const withSecurityScreenIOS = (Wrapped: any) => {
   };
 };
 
-const withSecurityScreenAndroid = (Wrapped: any) => Wrapped;
-
-export const withSecurityScreen =
-  Platform.OS === 'ios' ? withSecurityScreenIOS : withSecurityScreenIOS;
+export const withSecurityScreen = withSecurityScreenMain

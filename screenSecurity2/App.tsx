@@ -1,4 +1,4 @@
-import React, {type PropsWithChildren} from 'react';
+import React, {useEffect, type PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -11,8 +11,24 @@ import {
 
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 import {withSecurityScreen} from './src/hooks/security';
+// import { DeviceEventEmitter } from 'react-native';
 
 const App = () => {
+  useEffect(() => {
+    // DeviceEventEmitter.addListener('appStateChange', (isForeground) => {
+    //   if (isForeground) {
+    //     console.log('La aplicación está en primer plano');
+    //   } else {
+    //     console.log('La aplicación está en segundo plano');
+    //   }
+    // });
+  
+    return () => {
+      
+    }
+  }, [])
+  
+
   return (
     <>
       <Header />
@@ -20,4 +36,5 @@ const App = () => {
   );
 };
 
-export default withSecurityScreen(App);
+// export default withSecurityScreen(App);
+export default App;
