@@ -271,6 +271,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation "com.google.firebase:firebase-bom:32.7.1"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
@@ -303,6 +304,7 @@ if (isNewArchitectureEnabled()) {
         resolutionStrategy.dependencySubstitution {
             substitute(module("com.facebook.react:react-native"))
                     .using(project(":ReactAndroid"))
+                    .using(project(':react-native-flag-secure-android'))
                     .because("On New Architecture we're building React Native from source")
             substitute(module("com.facebook.react:hermes-engine"))
                     .using(project(":ReactAndroid:hermes-engine"))

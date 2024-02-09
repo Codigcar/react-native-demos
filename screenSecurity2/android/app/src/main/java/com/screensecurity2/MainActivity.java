@@ -22,6 +22,10 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
+  //   getWindow().setFlags(
+  //    WindowManager.LayoutParams.FLAG_SECURE,
+  //    WindowManager.LayoutParams.FLAG_SECURE
+  //  );
     return new MainActivityDelegate(this, getMainComponentName());
   }
 

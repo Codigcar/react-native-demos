@@ -24,7 +24,7 @@ import com.screensecurity2.newarchitecture.components.MainComponentsRegistry;
 import com.screensecurity2.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
-
+import com.kristiansorens.flagsecure.FlagSecurePackage;
 /**
  * A {@link ReactNativeHost} that helps you load everything needed for the New Architecture, both
  * TurboModule delegates and the Fabric Renderer.
@@ -47,6 +47,7 @@ public class MainApplicationReactNativeHost extends ReactNativeHost {
     List<ReactPackage> packages = new PackageList(this).getPackages();
     // Packages that cannot be autolinked yet can be added manually here, for example:
     //     packages.add(new MyReactNativePackage());
+        packages.add(new FlagSecurePackage());
     // TurboModules must also be loaded here providing a valid TurboReactPackage implementation:
     //     packages.add(new TurboReactPackage() { ... });
     // If you have custom Fabric Components, their ViewManagers should also be loaded here
