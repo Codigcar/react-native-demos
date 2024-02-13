@@ -3,6 +3,7 @@ import {
     backgroundColorShorthand,
     border,
     color,
+    composeRestyleFunctions,
     // composeRestyleFunctions,
     createRestyleFunction,
     layout,
@@ -52,7 +53,7 @@ import {
     themeKey: 'lineHeight',
   })
   
-  export const text = [
+  export const text = composeRestyleFunctions([
     typography,
     color,
     fontFamily,
@@ -63,5 +64,5 @@ import {
     opacity,
     textShadow,
     visible,
-  ]
+  ])
   

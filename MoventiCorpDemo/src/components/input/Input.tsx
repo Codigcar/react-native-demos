@@ -7,26 +7,31 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import View from '../box/View';
+import {Noop} from 'react-hook-form';
 
 type ICustomInput = {
   placeholder?: string;
   onChangeText?: any;
-  error?: string;
+  errors?: string;
   SuffixComponent?: React.ComponentType;
   secureTextEntry?: any;
+  onBlur?: Noop;
+  value: string;
 };
 
 const CustomInput = ({
-  placeholder,
+  errors,
+  onBlur,
   onChangeText,
-  error,
+  placeholder,
   SuffixComponent,
+  value,
   ...props
 }: ICustomInput) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [text, setText] = useState('');
+  // const [text, setText] = useState('');
   const [showPassword, setShowPassword] = useState(props.secureTextEntry);
-  const labelPosition = useRef(new Animated.Value(text ? 1 : 0)).current;
+  const labelPosition = useRef(new Animated.Value(value ? 1 : 0)).current;
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -34,14 +39,15 @@ const CustomInput = ({
   };
 
   const handleBlur = () => {
+    onBlur && onBlur();
     setIsFocused(false);
-    if (!text) {
+    if (!value) {
       animatedLabel(0);
     }
   };
 
   const handleTextChange = (text: string) => {
-    setText(text);
+    // setText(text);
     if (onChangeText) {
       onChangeText(text);
     }
@@ -97,7 +103,7 @@ const CustomInput = ({
             onFocus={handleFocus}
             onBlur={handleBlur}
             onChangeText={handleTextChange}
-            value={text}
+            value={value}
             textAlignVertical="center"
             textContentType={
               props.secureTextEntry ? 'newPassword' : props.secureTextEntry
@@ -105,7 +111,7 @@ const CustomInput = ({
             secureTextEntry={showPassword}
           />
           {SuffixComponent ? <SuffixComponent /> : null}
-          {props.secureTextEntry && !!text && (
+          {props.secureTextEntry && !!value && (
             <View>
               <TouchableOpacity
                 style={{width: 24}}
@@ -122,7 +128,7 @@ const CustomInput = ({
           )}
         </View>
       </View>
-      {error && <Text style={styles.errorText}>{error}</Text>}
+      {errors ? <Text style={styles.errorText}>{errors}</Text> : null}
     </View>
   );
 };

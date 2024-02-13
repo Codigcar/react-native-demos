@@ -1,4 +1,12 @@
-import {createTheme} from '@shopify/restyle';
+import {
+  BoxProps as BoxDefaultProps,
+  ColorProps,
+  OpacityProps,
+  TextShadowProps,
+  TypographyProps as TypographyDefaultProps,
+  VisibleProps,
+  createTheme,
+} from '@shopify/restyle';
 
 const palette = {
   white: {
@@ -37,42 +45,52 @@ const palette = {
   },
   'blue-400': '#0089ff',
   primary: '#BD1714',
-  yellow: '#fff000'
+  yellow: '#fff000',
 };
 
-const base = 16
-
-const sizes = {
-  '0': base * 0, // 0
-  '0.25': base * 0.25, // 4
-  '0.5': base * 0.5, // 8
-  '0.75': base * 0.75, // 12
-  '1': base * 1, // 16
-  '1.25': base * 1.25, // 20
-  '1.5': base * 1.5, // 24
-  '2': base * 2, // 32
-  '2.5': base * 2.5, // 40
-  '3': base * 3, // 48
-  '4': base * 4, // 64
-  '5': base * 5, // 30
-  '6': base * 6, // 96
-  '8': base * 8, // 128
-};
+const base = 16;
 
 const theme = createTheme({
   colors: {
     primary: palette.primary,
-    yellow:palette.yellow,
+    secondary: palette.primary,
+    yellow: palette.yellow,
     white: palette.white.default,
-    'gray-900': palette.coolGray[900]
+    'gray-900': palette.coolGray[900],
+    black: palette.black[100],
+    link: palette['blue-400'],
+    'coolGray-100': palette.coolGray[100],
+    'coolGray-200': palette.coolGray[200],
+    'coolGray-300': palette.coolGray[300],
+    'coolGray-400': palette.coolGray[400],
+    'coolGray-500': palette.coolGray[500],
+    'coolGray-600': palette.coolGray[600],
+    'coolGray-700': palette.coolGray[700],
+    'coolGray-800': palette.coolGray[800],
+    'trueGray-200': palette.trueGray[200],
+    text: palette.coolGray[500],
   },
+  breakpoints: {},
   spacing: {
+    '0': base * 0, // 0
+    '0.25': base * 0.25, // 4
+    '0.5': base * 0.5, // 8
+    '0.75': base * 0.75, // 12
+    '1': base * 1, // 16
+    '1.25': base * 1.25, // 20
+    '1.5': base * 1.5, // 24
+    '2': base * 2, // 32
+    '2.5': base * 2.5, // 40
+    '3': base * 3, // 48
+    '4': base * 4, // 64
+    '5': base * 5, // 30
+    '6': base * 6, // 96
+    '8': base * 8, // 128
     s: 8,
     m: 16,
     l: 24,
     xl: 40,
   },
-  breakpoints: {},
   borderRadii: {
     none: 0,
     xs: base * 0.125, // 2
@@ -81,6 +99,42 @@ const theme = createTheme({
     lg: base * 0.5, // 8
     xl: base * 0.75, // 10
     full: 9999,
+  },
+  fontFamily: {
+    display: 'serif',
+    body: 'Roboto',
+  },
+  fontSize: {
+    xxs: base * 0.625, // 10
+    xs: base * 0.75, // 12
+    sm: base * 0.875, // 14
+    base: 16, // 16
+    lg: base * 1.125, // 18
+    xl: base * 1.25, // 20
+    '2xl': base * 1.5, // 24
+    '3xl': base * 1.875, // 30,
+    '4xl': base * 2.25, // 36
+    '5xl': base * 3, // 48
+    '6xl': base * 3.75, // 60
+  },
+  fontWeight: {
+    thin: '100',
+    extralight: '200',
+    light: '300',
+    normal: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+  letterSpacing: {
+    tighter: base * -0.05,
+    tight: base * -0.025,
+    normal: 0,
+    wide: base * 0.025,
+    wider: base * 0.05,
+    widest: base * 0.1,
   },
   lineHeight: {
     none: base * 1,
@@ -100,18 +154,34 @@ const theme = createTheme({
   },
   textVariants: {
     header: {
-      fontWeight: 'bold',
-      fontSize: 34,
+      fontFamily: 'roboto',
     },
     body: {
-      fontSize: 16,
-      lineHeight: 24,
+
     },
-    defaults: {
-      // We can define a default text variant here.
-    },
-  },
+    defaults:{}
+  }
 });
+
+interface TypographyCustomProps {
+  fontFamily?: keyof Theme['fontFamily'];
+  fontSize?: keyof Theme['fontSize'];
+  // fontWeight?: keyof Theme['fontWeight'];
+  letterSpacing?: keyof Theme['letterSpacing'];
+  lineHeight?: keyof Theme['lineHeight'];
+}
+
+export type TypographyProps = TypographyCustomProps &
+  Omit<TypographyDefaultProps<Theme>, keyof TypographyCustomProps>;
+
+export type TextProps = ColorProps<Theme> &
+  OpacityProps<Theme> &
+  TextShadowProps<Theme> &
+  TypographyProps &
+  VisibleProps<Theme>;
+
+export type BoxProps = BoxDefaultProps<Theme>
+export type AllProps = BoxProps & TextProps
 
 export type Theme = typeof theme;
 export default theme;
