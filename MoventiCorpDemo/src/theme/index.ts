@@ -46,6 +46,7 @@ const palette = {
   'blue-400': '#0089ff',
   primary: '#BD1714',
   yellow: '#fff000',
+  success: '#42C72C',
 };
 
 const base = 16;
@@ -69,6 +70,7 @@ const theme = createTheme({
     'coolGray-800': palette.coolGray[800],
     'trueGray-200': palette.trueGray[200],
     text: palette.coolGray[500],
+    success: palette.success,
   },
   breakpoints: {},
   spacing: {
@@ -156,11 +158,9 @@ const theme = createTheme({
     header: {
       fontFamily: 'roboto',
     },
-    body: {
-
-    },
-    defaults:{}
-  }
+    body: {},
+    defaults: {},
+  },
 });
 
 interface TypographyCustomProps {
@@ -180,8 +180,8 @@ export type TextProps = ColorProps<Theme> &
   TypographyProps &
   VisibleProps<Theme>;
 
-export type BoxProps = BoxDefaultProps<Theme>
-export type AllProps = BoxProps & TextProps
+export type BoxProps = BoxDefaultProps<Theme>;
+export type AllProps = BoxProps & TextProps;
 
 export type Theme = typeof theme;
 export default theme;

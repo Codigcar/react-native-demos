@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import RadioButton from '../components/radio/radioButton';
 import Button from '../components/button';
 import {useState} from 'react';
+import Toast, { BaseToast, ErrorToast } from 'react-native-toast-message';
 
 const schema = Yup.object()
   .shape({
@@ -62,10 +63,18 @@ const LoginScreen = () => {
       <View height={50} />
 
       <Button
-        disabled={!isValid}
+        // disabled={!isValid}
         type="primary"
         title="Continuar"
-        onPress={handleSubmit(onSubmit)}
+        // onPress={handleSubmit(onSubmit)}
+        onPress={() => {
+          console.log('hoaaa')
+          Toast.show({
+            type: 'success',
+            text1: 'Hello',
+            text2: 'This is some something 👋'
+          });
+        }}
       />
     </View>
   );
