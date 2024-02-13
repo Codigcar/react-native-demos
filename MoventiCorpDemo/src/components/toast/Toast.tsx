@@ -6,11 +6,7 @@ import Toast, {
 import View from '../box/View';
 import Paragraph from '../typhografic/Paragraph';
 
-export const toastConfig = {
-  /*
-      Overwrite 'success' type,
-      by modifying the existing `BaseToast` component
-    */
+const toastConfig = {
   success: (props: any) => (
     <View
       borderColor="success"
@@ -36,3 +32,5 @@ export const toastConfig = {
     </View>
   ),
 };
+
+export default toastConfig

@@ -1,13 +1,13 @@
+import {useState} from 'react';
 import {useForm} from 'react-hook-form';
+import Toast from 'react-native-toast-message';
+import * as Yup from 'yup';
+import {yupResolver} from '@hookform/resolvers/yup';
+
 import View from '../components/box/View';
 import FormInput from '../components/form/FormInput';
-import Paragraph from '../components/typhografic/Paragraph';
-import {yupResolver} from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
-import RadioButton from '../components/radio/radioButton';
+import RadioButton from '../components/radio/RadioButton';
 import Button from '../components/button';
-import {useState} from 'react';
-import Toast, { BaseToast, ErrorToast } from 'react-native-toast-message';
 
 const schema = Yup.object()
   .shape({
@@ -68,11 +68,11 @@ const LoginScreen = () => {
         title="Continuar"
         // onPress={handleSubmit(onSubmit)}
         onPress={() => {
-          console.log('hoaaa')
+          console.log('hoaaa');
           Toast.show({
             type: 'success',
             text1: 'Hello',
-            text2: 'This is some something 👋'
+            text2: 'This is some something 👋',
           });
         }}
       />
