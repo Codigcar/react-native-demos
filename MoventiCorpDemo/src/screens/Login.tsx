@@ -8,6 +8,7 @@ import View from '../components/box/View';
 import FormInput from '../components/form/FormInput';
 import RadioButton from '../components/radio/RadioButton';
 import Button from '../components/button';
+import {InputOTP} from '../components/input';
 
 const schema = Yup.object()
   .shape({
@@ -76,6 +77,7 @@ const LoginScreen = () => {
           });
         }}
       />
+      <InputOTP />
     </View>
   );
 };
