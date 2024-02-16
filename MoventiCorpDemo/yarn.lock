@@ -3130,15 +3130,15 @@ escape-html@~1.0.3:
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==
 
+escape-string-regexp@2.0.0, escape-string-regexp@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
+
 escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
-
-escape-string-regexp@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
-  integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
 
 escape-string-regexp@^4.0.0:
   version "4.0.0"
@@ -3866,7 +3866,7 @@ internal-slot@^1.0.5:
     hasown "^2.0.0"
     side-channel "^1.0.4"
 
-invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -5657,6 +5657,11 @@ react-native-radio-buttons-group@^3.0.7:
   resolved "https://registry.yarnpkg.com/react-native-radio-buttons-group/-/react-native-radio-buttons-group-3.0.7.tgz#55ff476387aeb240ca5f259209f6887250e792bf"
   integrity sha512-QV0ZSJEkf0Z8kIVe38iz02FlJbJZRxeVkX8F+iRUsSspqDf0nSviouFoQqtQOw3LTJWCo59ykycRZm4NmGaJ4w==
 
+react-native-recaptcha-that-works@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-recaptcha-that-works/-/react-native-recaptcha-that-works-2.0.0.tgz#f39b7595948e59b0d75ef62eeb0bed4affe060a4"
+  integrity sha512-860M3qopVwpefEkjNsMyWW8LCA1Wp3dk0CKVPdaUOeUjo58m4oB7quVuiSvB5paOto7yuvy9Anwbk3rA2unvRQ==
+
 react-native-safe-area-context@^4.9.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.9.0.tgz#21a570ca3594cb4259ba65f93befaa60d91bcbd0"
@@ -5674,6 +5679,14 @@ react-native-toast-message@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.2.0.tgz#c53a4746b15616858a7d61c4386b92cbe9fbf911"
   integrity sha512-AFti8VzUk6JvyGAlLm9/BknTNDXrrhqnUk7ak/pM7uCTxDPveAu2ekszU0on6vnUPFnG04H/QfYE2IlETqeaWw==
+
+react-native-webview@^13.8.1:
+  version "13.8.1"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-13.8.1.tgz#d0058c063e38241476049aaab2e5cc9f254d5480"
+  integrity sha512-7Jqm1WzWJrOWraBAXQfKtr/Uo5Jw/IJHzC40jYLwgV/eVGmLJ9BpGKw6QVw7wpRkjmTZ2Typ4B1aHJLJJQFslA==
+  dependencies:
+    escape-string-regexp "2.0.0"
+    invariant "2.2.4"
 
 react-native@0.73.4:
   version "0.73.4"

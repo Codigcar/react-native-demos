@@ -8,13 +8,16 @@ import {NavigationContainer} from '@react-navigation/native';
 import {RootStack} from './src/routes';
 import LoginScreen from './src/screens/Login';
 import {toastConfig} from './src/components/toast/Toast';
+import HomeScreen from './src/screens/Home.screen';
 
 const RootStackScreen: React.FC = () => {
   return (
     <RootStack.Navigator
-      initialRouteName="Login"
+      // initialRouteName="Login"
+      initialRouteName="Home"
       screenOptions={{headerShown: false}}>
       <RootStack.Screen name="Login" component={LoginScreen} />
+      <RootStack.Screen name="Home" component={HomeScreen} />
     </RootStack.Navigator>
   );
 };

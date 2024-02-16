@@ -9,6 +9,8 @@ import FormInput from '../components/form/FormInput';
 import RadioButton from '../components/radio/RadioButton';
 import Button from '../components/button';
 import {InputOTP} from '../components/input';
+import RecaptchaV2 from '../components/captcha';
+import TimeLine from '../components/time/TimeLine';
 
 const schema = Yup.object()
   .shape({
@@ -78,6 +80,8 @@ const LoginScreen = () => {
         }}
       />
       <InputOTP />
+      <RecaptchaV2 />
+      <TimeLine />
     </View>
   );
 };
